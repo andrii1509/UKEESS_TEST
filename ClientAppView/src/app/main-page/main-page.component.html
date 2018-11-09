@@ -1,0 +1,49 @@
+<br><br><br><br>
+<h1 class="text-center">UKEESS Test Project</h1>
+<br><br><br><br>
+<div class="container">
+  <input class="form-control" style="width: 300px" type="text" placeholder="Search" (input)="searchData($event)">
+  <br>
+  <div class="row">
+    <div class="col-auto">
+      <button class="navigateBtns btn btn-link" (click)="paginate(0)"><<<</button>
+      <button class="navigateBtns btn btn-link" (click)="paginate(- 1)"><</button>
+    </div>
+    <div class="col-auto" *ngFor="let btn of buttonsCounter; let i = index">
+      <button class="navigateBtns btn btn-link" (click)="setpage(i)">{{i+1}}</button>
+    </div>
+    <div class="col-auto">
+      <button class="navigateBtns btn btn-link" (click)="paginate(1)">></button>
+      <button class="navigateBtns btn btn-link" (click)="paginate(buttonsCounter[buttonsCounter.length - 1])">>>> </button>
+    </div>
+  </div>
+  <br>
+  <table class="text-center table table-striped">
+    <tr>
+      <th></th>
+      <th></th>
+      <th>empID</th>
+      <th>empName</th>
+      <th>empActive</th>
+      <th>empDepartment</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let item of empArray; let i = index">
+      <td>
+        <button class="btn btn-link" (click)="viewEmp(item)">View</button>
+      </td>
+      <td>
+        <button class="btn btn-link" (click)="editEmp(item)">Edit</button>
+      </td>
+      <td>{{item?.empID}}</td>
+      <td>{{item?.empName}}</td>
+      <td>{{item?.empActive}}</td>
+      <td>{{item.dpName}}</td>
+      <td>
+        <button class="btn btn-link" (click)="deleteEmp(item, i)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <button id="addButton" class="btn btn-success" (click)="redirectToAdd()">Add Emp</button>
+</div>

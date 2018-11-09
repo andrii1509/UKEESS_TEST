@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.buttonContainer{
+  margin-right: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+input[type="checkbox"] {
+  border: none !important;
+  transition: none !important;
+  width: 40px;
+}

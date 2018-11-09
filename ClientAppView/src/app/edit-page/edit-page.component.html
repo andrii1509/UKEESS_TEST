@@ -1,0 +1,54 @@
+<br>
+<br><br>
+<h3 class="text-center">Edit form:</h3>
+<br>
+<br>
+<div class="container">
+  <form #form="ngForm" (submit)="sendForm(form)" class="form-group">
+    <div class="row">
+      <div class="col-sm-4">
+        <h4 class="text-center">Emp Name :</h4>
+      </div>
+      <div class="col-sm-5">
+        <input class="form-control"
+               type="text"
+               name="empName"
+               [(ngModel)]="currentEmp.empName"
+               placeholder="Name"
+        >
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <h4 class="text-center">Emp Avtive :</h4>
+      </div>
+      <div class="col-sm-5">
+        <input
+          class="form-control"
+          type="checkbox"
+          name="empActive"
+          [(ngModel)]="currentEmp.empActive"
+        >
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <h4 class="text-center">Emp Department :</h4>
+      </div>
+      <div class="col-sm-5">
+        <select #select class="form-control" name="dpID" [ngModel]="currentEmp.emp_dpID">
+          <option *ngFor="let dpt of dptArray" [value]="dpt.dpID">
+            {{dpt?.dpName}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <br>
+    <div class="buttonContainer">
+      <input type="submit" class="btn btn-success" value="Submit">
+      <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+    </div>
+  </form>
+</div>
