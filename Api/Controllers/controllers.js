@@ -90,7 +90,7 @@ controller.addEmployee = function (req, res) {
 
 controller.deleteEmployee = function (req, res) {
     try {
-        var sql = 'DELETE FROM tblEmployees WHERE empID = ' + req.params.id;
+        let sql = 'DELETE FROM tblEmployees WHERE empID = ' + req.params.id;
         con.query(sql, function (err, result) {
             if (err) throw err;
             console.log("removed item");
