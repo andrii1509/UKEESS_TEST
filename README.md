@@ -1,6 +1,9 @@
 Front-End:
+
 view - Angular 2(6), Bootstrap
+
 Back-End:
+
 NodeJS, ExpresJS, MySql, Cors
 
 
