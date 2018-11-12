@@ -12,7 +12,7 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     private navigation: Router,
-    private dataService: DataService
+    private dataService: DataService,
   ) { }
 
   empArray: Employe[];

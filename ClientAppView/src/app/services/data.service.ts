@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {RequestMethod, RequestOptions} from '@angular/http';
+import {Employe} from "../Models/Employe";
 
 @Injectable({
   providedIn: 'root'
@@ -17,20 +17,20 @@ export class DataService {
   constructor(
     private http: HttpClient
   ) { }
-  getAllData(pageNum): Observable<any[]> {
-    return this.http.get<any>(this.AllEmp + pageNum);
+  getAllData(pageNum): Observable<Employe[]> {
+    return this.http.get<Employe[]>(this.AllEmp + pageNum);
   }
   getAllDpt(): Observable<any> {
     return this.http.get(this.AllDpt);
   }
-  addEmpToDB(emp): Observable<any> {
-    return this.http.post<any>(this.addEmp, emp);
+  addEmpToDB(emp): Observable<Employe> {
+    return this.http.post<Employe>(this.addEmp, emp);
   }
   removeEmp(id): Observable<void> {
     return this.http.delete<void>(this.deleteEl + id);
   }
-  changeEmp(data): Observable<any> {
-    return this.http.put<any>(this.updateEmp, data);
+  changeEmp(data): Observable<Employe> {
+    return this.http.put<Employe>(this.updateEmp, data);
   }
   searchEmp(name): Observable<any> {
     return this.http.get<any>(this.search + name);
